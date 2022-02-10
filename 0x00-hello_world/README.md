@@ -1,0 +1,1 @@
+Some uses of shell scripts to run the c compiler in different ways + My first wrote C programs.
