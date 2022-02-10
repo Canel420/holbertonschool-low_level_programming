@@ -1,0 +1,1 @@
+This repository contains my first steps into C programming. :) So cool!
