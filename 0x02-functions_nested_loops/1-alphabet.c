@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include "_putchar.h"
-
-void print_alphabet(void);
+#include "main.h"
 
 /**
  * print_alphabet - Alphabet in lowercases.
