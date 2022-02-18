@@ -1,11 +1,18 @@
 #include "main.h"
 
+/**
+ * mul - Function that multiply integers.
+ * @a: First integer
+ * @b: Second integer
+ * Description: Checks if a character input is a digit.This function multiply
+ * two integers.
+ * Return: integer multiplication.
+ */
+
 int mul(int a, int b)
 {
 	int mult;
 
-	mult = (a * b)
-
-	if (a > 9 && a < 99)
-		a = _putchar(((a / 10) + '0') && ((a % 10) + '0'));
-	else if (a > 99 && a < 999)
+	mult = (a * b);
+	return (mult);
+}
