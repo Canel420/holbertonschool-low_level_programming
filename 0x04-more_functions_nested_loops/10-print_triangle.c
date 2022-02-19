@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * print_triangle - function that prints a triangle.
+ * @size: Is the size of the triangle.
+ *
+ * Description: this function prints a triangle figure
+ * using #s.
+ *
+ */
 void print_triangle(int size)
 {
 	int i;
