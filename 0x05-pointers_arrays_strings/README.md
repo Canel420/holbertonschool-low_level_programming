@@ -1,0 +1,1 @@
+Tis folder contains usage examples for simple pointers, arrays and strings.
