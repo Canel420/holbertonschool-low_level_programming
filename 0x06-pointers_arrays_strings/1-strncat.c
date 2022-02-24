@@ -14,34 +14,19 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	char *dest2 = dest, *resrc = src;
-	int i, len = 0;
+	int i = 0, j = 0;
 
-	while (*dest != '\0')
+	while (dest[i] != 0)
 	{
-		dest++;
+	        i++;
 	}
 
-	/* i need to count src characters */
-	while (*src != '\0')
+	while (j < n && src[j] != 0)
 	{
-		len++;
-		src++;
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	/* Here src is at the end */
-	/* i need to reset it */
 
-	src = resrc;
-
-	/* n is goin to shit in n=1024 */
-
-	if (n > len)
-		n = len;
-
-	for (i = 0 ; i < n ; i++)
-		*dest++ = *src++;
-
-	*dest = '\0';
-
-	return (dest2);
+	return (dest);
 }
