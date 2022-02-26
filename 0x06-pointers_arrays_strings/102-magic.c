@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * main - Print 98
+ * Description: print 98
+ * Return: 0
+ */
 int main(void)
 {
 	int n;
