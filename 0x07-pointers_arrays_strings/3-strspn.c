@@ -15,7 +15,7 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-        int len = 0;
+	int len = 0;
 	char *orig = accept;
 
 	while (*s)
@@ -25,12 +25,11 @@ unsigned int _strspn(char *s, char *accept)
 			if (*accept == *s)
 			{
 				len++;
-				/*_putchar(*accept);*/
 			}
 			accept++;
 		}
 		accept = orig;
-	        s++;
+		s++;
 		if (*s == ' ')
 		{
 			break;
