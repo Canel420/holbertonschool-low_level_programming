@@ -1,0 +1,1 @@
+This folder contains more usage examples of pointers. Because pointers are hard to understand. 
