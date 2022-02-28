@@ -26,12 +26,15 @@ unsigned int _strspn(char *s, char *accept)
 			{
 				len++;
 				_putchar(*accept);
-				break;
 			}
 			accept++;
 		}
 		accept = orig;
 	        s++;
+		if (*s == ' ')
+		{
+			break;
+		}
 	}
 	return (len);
 }
