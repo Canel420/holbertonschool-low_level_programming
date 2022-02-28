@@ -2,14 +2,14 @@
 
 /**
  * _strspn - Function that gets the length of a prefix substring.
- * string.
  *
  * @s: Pointer to string.
- * @c: Character to search.
+ * @accept: String to match
  *
- * Description: Locates a character in a string.
+ * Description: Count for matching character between accept and
+ * s first segment.
  *
- * Return: Pointer first ocurrence of character c.
+ * Return: Unsigned integer
  *
  */
 
@@ -25,7 +25,7 @@ unsigned int _strspn(char *s, char *accept)
 			if (*accept == *s)
 			{
 				len++;
-				_putchar(*accept);
+				/*_putchar(*accept);*/
 			}
 			accept++;
 		}
