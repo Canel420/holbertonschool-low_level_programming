@@ -25,11 +25,12 @@ unsigned int _strspn(char *s, char *accept)
 			if (*accept == *s)
 			{
 				len++;
+				_putchar(*accept);
 				break;
 			}
 			accept++;
 		}
-		accept = orig + 1;
+		accept = orig;
 	        s++;
 	}
 	return (len);
