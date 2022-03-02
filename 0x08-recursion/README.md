@@ -6,8 +6,8 @@ go to an infinite loop).
 This type or functions are very useful to solve many mathematical problemas
 such as:
 
-*Calculating the factorial.\n
-*Generating Fibonaccie series.\n
-*Towers of Hanoi.\n
+*Calculating the factorial.\\
+*Generating Fibonaccie series.\\
+*Towers of Hanoi.\\
 
 This folder contains some basic recursion examples.
