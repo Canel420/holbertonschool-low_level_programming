@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - Multiply arguments in main.
@@ -21,8 +22,8 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	a = (*argv[1] - '0') + 0;
-	b = (*argv[2] - '0') + 0;
+	a = atoi(argv[1]);
+	b = atoi(argv[2]);
 
 	printf("%d\n", a * b);
 	return (0);
