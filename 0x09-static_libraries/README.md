@@ -1,0 +1,1 @@
+This folder contains basic practice on static library creation.
