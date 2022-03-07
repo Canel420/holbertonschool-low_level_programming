@@ -29,13 +29,15 @@ char *_strdup(char *str)
 		str++;
 	}
 
+	len = len + 1;
 	str = origin;
-
-	strcpy = malloc(len * sizeof(char));
 
 	if (len == 0)
 		return (NULL);
-	if (str == NULL)
+
+	strcpy = malloc(len * sizeof(char));
+
+	if (strcpy == NULL)
 		return (NULL);
 
 	for (i = 0 ; i < len ; i++)
