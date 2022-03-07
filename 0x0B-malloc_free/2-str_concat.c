@@ -42,7 +42,7 @@ char *str_concat(char *s1, char *s2)
 	char *two_str;
 	int i = 0, j = 0, len;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 
 	len = _strlen(s1) + _strlen(s2) + 1;
