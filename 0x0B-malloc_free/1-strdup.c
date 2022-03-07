@@ -21,6 +21,9 @@ char *_strdup(char *str)
 	char *origin = str;
 	int i, len;
 
+	if (str == NULL)
+		return (NULL);
+
 	len = 0;
 
 	while (*str)
@@ -33,9 +36,6 @@ char *_strdup(char *str)
 	str = origin;
 
 	strcpy = malloc(len * sizeof(char));
-
-	if (str == NULL)
-		return (NULL);
 
 	if (strcpy == NULL)
 		return (NULL);
