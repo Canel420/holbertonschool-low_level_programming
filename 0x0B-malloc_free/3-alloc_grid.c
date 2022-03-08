@@ -21,14 +21,19 @@ int **alloc_grid(int width, int height)
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
+	/* Array of pointers of size height */
 	arr = (int **)malloc(sizeof(int *) * height);
 	if (arr == NULL)
 		return (NULL);
+
+	/* Allocated memory of size width to every row in height */
 	for (i = 0 ; i < height; i++)
 	{
 		arr[i] = (int *)malloc(sizeof(int) * width);
 		if (arr[i] == NULL)
 			return (NULL);
+
+		/* initialize the allocated memory with 0 */
 
 		for (j = 0; j < width ; j++)
 		{
