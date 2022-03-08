@@ -1,41 +1,43 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * alloc_grid - Array of integers
+ *
+ * @width: Width of the array.
+ * @height: Height of the array.
+ *
+ * Description: function that returns a pointer to a 2 dimensional
+ * array of integers.
+ *
+ * Return: Pointer to 2D array.
+ */
+
 int **alloc_grid(int width, int height)
 {
-	int **arr, r, c;
+	int i, j;
+	int **arr;
 
-	if (width <= 0 || height <=0)
+	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	/* Dynamically create an array of pointers of size height */
-	arr = (int **) malloc(width * sizeof(int *));
-
+	arr = (int **)malloc(sizeof(int *) * height);
 	if (arr == NULL)
 		return (NULL);
-
-	/* Dynamically allocate memory of size width */
-	for (r = 0 ; r < width ; r++)
+	for (i = 0 ; i < height; i++)
 	{
-		arr[r] = malloc(height * sizeof(int));
-
-		if (arr[r] == NULL)
-			return (NULL);
-	}
-	/* Initialize memory with zeros */
-	for (r = 0 ; r < width ; r++)
-	{
-		for (c = 0 ; c < height ; c++)
+		arr[i] = (int *)malloc(sizeof(int) * width);
+		if (arr[i] == NULL)
 		{
-			arr[r][c] = 0;
+			for (j = 0 ; j < i ; j++)
+				free(arr[j]);
+			free(arr);
+			return (NULL);
+		}
+		for (j = 0; j < width ; j++)
+		{
+			arr[i][j] = 0;
 		}
 	}
-
-	for (r = 0; r < width ; r++)
-	{
-		free(arr[r]);
-	}
-	free (arr);
-
 	return (arr);
 }
