@@ -41,6 +41,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i, j, len = 0;
 	char *str_nc;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
 	/* Measure the length needed for malloc */
 	if (str_len(s2) < n)
 		len = str_len(s1) + str_len(s2) + 1;
