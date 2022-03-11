@@ -38,7 +38,7 @@ unsigned int str_len(char *s)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, len = 0;
+	unsigned int i, j, len1 = 0, len2 = 0;
 	char *str_nc;
 
 	if (s1 == NULL)
@@ -47,13 +47,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	/* Measure the length needed for malloc */
-	if (str_len(s2) <= n)
-		len = str_len(s1) + str_len(s2) + 1;
-	else
-		len = str_len(s1) + n + 1;
+
+	len1 = str_len(s1);
+	len2 = str_len(s2);
+
+	if (n >= len2)
+		n = len2;
 
 	/* Reserved the space for a string concatenation */
-	str_nc = malloc(sizeof(char) * len);
+	str_nc = malloc(sizeof(char) * (len1 + n + 1));
 
 	if (str_nc == NULL)
 		return (NULL);
