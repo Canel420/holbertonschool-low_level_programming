@@ -47,7 +47,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	/* Measure the length needed for malloc */
-	if (str_len(s2) < n)
+	if (str_len(s2) <= n)
 		len = str_len(s1) + str_len(s2) + 1;
 	else
 		len = str_len(s1) + n + 1;
@@ -63,7 +63,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		str_nc[i] = s1[i];
 
 	/* Then, the first n characters from s2 */
-	for (j = 0 ; j < n ; j++)
+	for (j = 0 ; j <= n ; j++)
 	{
 		str_nc[i] = s2[j];
 		i++;
