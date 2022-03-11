@@ -61,11 +61,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	/* Initialize the space copying the strings -first s1 */
-	for (i = 0 ; s1[i] != '\0' ; i++)
+	for (i = 0 ; i < len1 ; i++)
 		str_nc[i] = s1[i];
 
 	/* Then, the first n characters from s2 */
-	for (j = 0 ; j <= n ; j++)
+	for (j = 0 ; j < n ; j++)
 	{
 		str_nc[i] = s2[j];
 		i++;
