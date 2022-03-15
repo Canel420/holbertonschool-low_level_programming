@@ -2,6 +2,24 @@
 #include <stdlib.h>
 
 /**
+ * len - Measures the length of a string.
+ *
+ * @s: Pointer to string to measure.
+ *
+ * Description: Recursive count of characters in a
+ * string.
+ *
+ * Return: Number of characters.
+ */
+
+int len(char *s)
+{
+	if (!s || !*s)
+		return (0);
+	return (1 + len(s + 1));
+}
+
+/**
  * new_dog - Assign a new dog element.
  *
  * @name: Pointer to name of the dog.
@@ -18,29 +36,27 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	/* dog_t is a user (me) created data type */
 	dog_t *nd;
-	int n_len = 0, o_len = 0, i, j;
+	int n_len, o_len, i, j;
 	char *n2, *o2;
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
 	/* Measure length of name and owner for copies */
-	while (name[n_len])
-		n_len++;
-	while (owner[len_owner])
-		o_len++;
+	n_len = len(name) + 1;
+	o_len = len(owner) + 1;
 
 	nd = malloc(sizeof(dog_t));
 	if (nd == NULL)
 		return (NULL);
 	/* Lets make the copies */
-	n2 = malloc(n_len + 1);
+	n2 = malloc(sizeof(char) * n_len);
 	if (n2 == NULL)
 		return (NULL);
 	for (i = 0 ; name[i] ; i++)
 		n2[i] = name[i];
 	n2[i] = '\0';
 
-	o2 = malloc(o_len + 1);
+	o2 = malloc(sizeof(char) * o_len);
 	if (o2 == NULL)
 		return (NULL);
 	for (j = 0 ; owner[j] ; j++)
