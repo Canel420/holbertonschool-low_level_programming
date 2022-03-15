@@ -41,14 +41,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
-
-	nd = malloc(sizeof(dog_t));
-	if (nd == NULL)
-		return (NULL);
 	/* Measure length of name and owner for copies */
 	n_len = len(name) + 1;
 	o_len = len(owner) + 1;
 
+	nd = malloc(sizeof(dog_t));
+	if (nd == NULL)
+		return (NULL);
 	/* Lets make the copies */
 	n2 = malloc(sizeof(char) * n_len);
 	if (n2 == NULL)
