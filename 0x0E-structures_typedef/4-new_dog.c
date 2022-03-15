@@ -42,21 +42,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (name == NULL || owner == NULL)
 		return (NULL);
 	/* Measure length of name and owner for copies */
-	n_len = len(name) + 1;
-	o_len = len(owner) + 1;
+	n_len = len(name);
+	o_len = len(owner);
 
 	nd = malloc(sizeof(dog_t));
 	if (nd == NULL)
 		return (NULL);
 	/* Lets make the copies */
-	n2 = malloc(sizeof(char) * n_len);
+	n2 = malloc(sizeof(char) * (n_len + 1));
 	if (n2 == NULL)
 		return (NULL);
 	for (i = 0 ; name[i] ; i++)
 		n2[i] = name[i];
 	n2[i] = '\0';
 
-	o2 = malloc(sizeof(char) * o_len);
+	o2 = malloc(sizeof(char) * (o_len + 1));
 	if (o2 == NULL)
 		return (NULL);
 	for (j = 0 ; owner[j] ; j++)
