@@ -49,7 +49,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (nd == NULL)
 		return (NULL);
 	/* Lets make the copies */
-	n2 = malloc(sizeof(char) * n_len);
+	n2 = malloc(n_len);
 	if (n2 == NULL)
 		return (NULL);
 
@@ -57,7 +57,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		n2[i] = name[i];
 	n2[i] = '\0';
 
-	o2 = malloc(sizeof(char) * o_len);
+	o2 = malloc(o_len);
 	if (o2 == NULL)
 		return (NULL);
 
