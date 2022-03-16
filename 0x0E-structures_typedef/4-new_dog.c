@@ -1,23 +1,7 @@
 #include "dog.h"
 #include <stdlib.h>
-
-/**
- * len - Measures the length of a string.
- *
- * @s: Pointer to string to measure.
- *
- * Description: Recursive count of characters in a
- * string.
- *
- * Return: Number of characters.
- */
-
-int len(char *s)
-{
-	if (!s || !*s)
-		return (0);
-	return (1 + len(s + 1));
-}
+#include <stdio.h>
+#include <string.h>
 
 /**
  * new_dog - Assign a new dog element.
@@ -34,38 +18,17 @@ int len(char *s)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	/* dog_t is a user (me) created data type */
 	dog_t *nd;
-	int n_len, o_len, i, j;
-	char *n2, *o2;
-
-	if (name == NULL || owner == NULL)
-		return (NULL);
-	/* Measure length of name and owner for copies */
-	n_len = len(name);
-	o_len = len(owner);
 
 	nd = malloc(sizeof(dog_t));
-	if (nd == NULL)
+	if (name == NULL || owner == NULL)
+	{
+		free(nd);
 		return (NULL);
-	/* Lets make the copies */
-	n2 = malloc(sizeof(char) * (n_len + 1));
-	if (n2 == NULL)
-		return (NULL);
-	for (i = 0 ; name[i] ; i++)
-		n2[i] = name[i];
-	n2[i] = '\0';
+	}
 
-	o2 = malloc(sizeof(char) * (o_len + 1));
-	if (o2 == NULL)
-		return (NULL);
-	for (j = 0 ; owner[j] ; j++)
-		o2[j] = owner[j];
-	o2[i] = '\0';
-
-	/* Assign the copied names into new dog */
-	(*nd).name = n2;
+	(*nd).name = name;
 	(*nd).age = age;
-	(*nd).owner = o2;
+	(*nd).owner = owner;
 	return (nd);
 }
