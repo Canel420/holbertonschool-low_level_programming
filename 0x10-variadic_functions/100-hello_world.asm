@@ -2,13 +2,13 @@
 
 	section .text
 _star:
-	mov rax, 0x1
-	mov rdi, 0x1
+	mov rax, 1
+	mov rdi, 1
 	mov rsi, message
-	mov rdx, 0x17
+	mov rdx, 17
 	syscall
 
-	mov eax, 0x60
+	mov eax, 60
 	xor rdi, rdi
 	syscall
 
