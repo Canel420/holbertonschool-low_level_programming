@@ -1,7 +1,7 @@
-	global _start
+	global main
 
 	section .text
-_star:
+main:
 	mov rax, 1
 	mov rdi, 1
 	mov rsi, message
