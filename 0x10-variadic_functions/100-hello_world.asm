@@ -9,4 +9,4 @@ main:
 	mov eax,0
 	int 0x80
 section .data
-	msg db 'Hello, World',0xa
+	msg db 'Hello, World', 0xa
