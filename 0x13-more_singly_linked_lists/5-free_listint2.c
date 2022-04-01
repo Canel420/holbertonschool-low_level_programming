@@ -12,18 +12,13 @@
 
 void free_listint2(listint_t **head)
 {
-	/* Deref head to get the real head */
 	listint_t *temp;
-
-	if (head == NULL)
-		return;
 
 	while (*head)
 	{
-		temp = *head;
-		*head = *head->next;
+		temp = (*head);
+		(*head) = (*head)->next;
 		free(temp);
 	}
-	/* Deref head to affect the real head back in the caller */
 	*head = NULL;
 }
