@@ -11,17 +11,17 @@
  * Return: 1 if it worked, or -1 if an error occurred.
  */
 
-int clear_bit (unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int get;
+	unsigned long int get = 1;
 
 	if ((sizeof(unsigned long int) * 8) - 1 < index)
 	{
 		return (-1);
 	}
 
-	get = ~(1 << index)
-	*n = *n & get;
+	get = get << index;
+	*n = *n & ~get;
 
 	return (1);
 }
