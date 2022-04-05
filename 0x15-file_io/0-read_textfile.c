@@ -1,5 +1,17 @@
 #include "main.h"
 
+/**
+ * read_textfile - function that reads a text file and prints it to the
+ * POSIX standard output.
+ *
+ * @filename: File to print.
+ * @letters: Amount of characters in file.
+ *
+ * Description: Read a file and print its contents.
+ * Return: Amount of characters printed.
+ *
+ */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
