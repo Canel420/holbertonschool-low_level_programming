@@ -21,7 +21,7 @@ int clear_bit (unsigned long int *n, unsigned int index)
 	}
 
 	get <<= index;
-	*n = *n & ~get;
+	*n &= ~get;
 
 	return (1);
 }
