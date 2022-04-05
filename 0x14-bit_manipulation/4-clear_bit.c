@@ -13,15 +13,15 @@
 
 int clear_bit (unsigned long int *n, unsigned int index)
 {
-	unsigned long int get = 1;
+	unsigned long int get;
 
 	if ((sizeof(unsigned long int) * 8) - 1 < index)
 	{
 		return (-1);
 	}
 
-	get <<= index;
-	*n &= ~get;
+	get = ~(1 << index)
+	*n = *n & get;
 
 	return (1);
 }
