@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ * _strlen - Measures a string.
+ *
+ * @s: String to be measured.
+ *
+ * Description: Count the number of characters in string.
+ *
+ * Return: Count.
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+	return (i);
+}
+
+/**
  * create_file - Function that creates a file.
  *
  * @filename: Name for the new file.
@@ -14,20 +33,19 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, f_write, len = 0;
+	int new, len = 0, f_write;
 
 	if (filename == NULL)
 		return (-1);
 
-	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
-	if (fd < 0)
+	len = _strlen(text_content);
+
+	new = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
+	if (new < 0)
 		return (-1);
 
-	while (text_content && *(text_content + len))
-		len++;
-
-	f_write = write(fd, text_content, len);
-	close(fd);
+	f_write = write(new, text_content, len + 1);
+	close(new);
 
 	if (f_write < 0)
 		return (-1);
