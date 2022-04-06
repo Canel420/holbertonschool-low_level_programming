@@ -33,7 +33,7 @@ int _strlen(char *s)
 
 int create_file(const char *filename, char *text_content)
 {
-	int new, len, f_write;
+	int new, len = 0, f_write;
 
 	if (filename == NULL)
 		return (-1);
