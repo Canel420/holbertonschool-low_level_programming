@@ -1,30 +1,6 @@
 #include "lists.h"
 
 /**
- * count_nodes - Function to count amount of nodes
- *
- * @head: Pointer to head node.
- *
- * Description: Traverse the doubly linked list counting nodes.
- *
- * Return: Nodes count.
- *
- */
-
-unsigned int count_nodes(dlistint_t *head)
-{
-	dlistint_t *temp = head;
-	int i = 0;
-
-	while (temp->next != NULL)
-	{
-		temp = temp->next;
-		i++;
-	}
-	return (i);
-}
-
-/**
  * insert_dnodeint_at_index - Function that inserts a node at a given position.
  *
  * @h: Pointer to pointer of head node.
@@ -38,11 +14,20 @@ unsigned int count_nodes(dlistint_t *head)
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int count = count_nodes(*h), i;
+	unsigned int i;
 	dlistint_t *temp = *h, *new_node;
 
-	if (temp == NULL || idx > count)
+	if (temp == NULL)
 		return (NULL);
+
+	/* Iterate until the index previous node */
+	if (idx != 0)
+	{
+		for (i = 0; i < idx - 1 && current != NULL; i++)
+			temp = temp->next;
+		if (temp == NULL)
+			return (NULL);
+	}
 
 	new_node = (dlistint_t *)malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
@@ -50,9 +35,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	new_node->n = n;
 
-	/* Iterate until the index previous node */
-	for (i = 0; i < idx - 1; i++)
-		temp = temp->next;
 	/* make next of new node as next of temp node */
 	new_node->next = temp->next;
 
