@@ -7,10 +7,15 @@
  * @key: key.
  * Return: value associated with the key, or NULL if it couldn’t be found.
  */
+
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index = 0;
 	hash_node_t *tmp = NULL;
+
+	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
+		key == NULL || strlen(key) == 0)
+			return (NULL);
 
 	index = key_index((unsigned char *)key, ht->size);
 	tmp = ht->array[index];
