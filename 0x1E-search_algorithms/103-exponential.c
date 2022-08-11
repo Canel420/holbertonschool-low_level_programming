@@ -55,12 +55,15 @@ int recursive_binary(int *array, size_t start, size_t end, int value)
 	if (start <= end)
 	{
 		mid = (start + (end - start) / 2);
-		print_search(array, start, end - 1);
 		if (array[mid] == value)
+		{
+			print_search(array, start, end - 1);
 			return (mid);
+		}
 		if (array[mid] > value)
 			return (recursive_binary(array, start, mid - 1, value));
 
+		print_search(array, start, end - 1);
 		return (recursive_binary(array, mid + 1, end, value));
 	}
 	return (-1);
